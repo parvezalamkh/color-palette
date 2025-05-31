@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Color Palette Generator</h1>
+            <p class="subtitle">Create, generate, and save beautiful color palettes for your design projects</p>
+        </header>
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="manual">
+                <i class="fas fa-palette"></i> Manual Creation
+            </div>
+            <div class="tab" data-tab="generate">
+                <i class="fas fa-magic"></i> Generate Palettes
+            </div>
+            <div class="tab" data-tab="saved">
+                <i class="fas fa-save"></i> Saved Palettes
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div id="manual-tab" class="tab-content active">
+                <div class="card">
+                    <h2><i class="fas fa-plus-circle"></i> Create Custom Palette</h2>
+                    <div class="input-group">
+                        <input type="color" id="colorPicker" value="#6a89a7">
+                        <input type="text" id="colorHex" placeholder="#HEX or color name" value="#6a89a7">
+                        <button id="addColor">
+                            <i class="fas fa-plus"></i> Add Color
+                        </button>
+                    </div>
+
+                    <div class="palette-display" id="currentPalette"></div>
+
+                    <div class="input-group">
+                        <input type="text" id="paletteName" placeholder="Enter palette name">
+                        <button id="savePalette">
+                            <i class="fas fa-save"></i> Save Palette
+                        </button>
+                        <button id="clearPalette" class="btn-secondary">
+                            <i class="fas fa-trash"></i> Clear Palette
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="generate-tab" class="tab-content">
+                <div class="card">
+                    <h2><i class="fas fa-wand-magic-sparkles"></i> Generate Color Scheme</h2>
+                    <div class="input-group">
+                        <input type="color" id="baseColor" value="#6a89a7">
+                        <input type="text" id="baseColorHex" placeholder="Base color" value="#6a89a7">
+                        <select id="paletteType">
+                            <option value="complementary">Complementary</option>
+                            <option value="analogous">Analogous</option>
+                            <option value="triadic">Triadic</option>
+                            <option value="tetradic">Tetradic</option>
+                            <option value="monochromatic">Monochromatic</option>
+                            <option value="splitComplementary">Split Complementary</option>
+                        </select>
+                        <button id="generatePalette" class="btn-success">
+                            <i class="fas fa-bolt"></i> Generate
+                        </button>
+                    </div>
+
+                    <div class="palette-display" id="generatedPalette"></div>
+
+                    <div class="input-group">
+                        <input type="text" id="generatedPaletteName" placeholder="Enter palette name">
+                        <button id="saveGeneratedPalette">
+                            <i class="fas fa-save"></i> Save Generated Palette
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="saved-tab" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-folder-open"></i> Your Saved Palettes</h2>
+                <div id="palettesList" class="saved-palettes"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Notification message</span>
+    </div>
+
+    <footer>
+        <p>Color Palette Generator &copy; 2023 | Create and save beautiful color schemes</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
